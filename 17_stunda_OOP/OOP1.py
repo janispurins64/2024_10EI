@@ -57,6 +57,7 @@ tr7 = Trissturis(5,7,8,"sarkana")
 tr8 = Trissturis(4,5,6,"zaļa")
 trs =[tr1,tr2,tr3,tr4,tr5,tr6,tr7,tr8]
 skaits = len(trs)
+skaits = len(trs)
 for i in range(skaits):
     if trs[i].krasa == "zaļa":
         print(f"i={i} a={trs[i].a} b={trs[i].b} c={trs[i].c}")
