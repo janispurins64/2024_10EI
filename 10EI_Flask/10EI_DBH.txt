@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS klients(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  vards TEXT,
+  uzvards TEXT NOT NULL,
+  telefons TEXT);
+
+CREATE TABLE IF NOT EXISTS pica(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nosaukums TEXT,
+  cena REAL,
+  sastavs TEXT,
+  izmers INTEGER
+);
