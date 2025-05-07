@@ -11,13 +11,19 @@
     <h1>Trīsstūris</h1>
     <form action="/dati2" method="GET">
         <label for="mala_a">Mala a:</label><br>
-        <input type="text" id="mala_a" name="mala_a" value=""><br>
+        <input type="number" id="mala_a" name="mala_a" value=""><br>
         <label for="mala_b">Mala b:</label><br>
-        <input type="text" id="mala_b" name="mala_b" value=""><br>
+        <input type="number" id="mala_b" name="mala_b" value=""><br>
         <label for="mala_c">Mala c:</label><br>
-        <input type="text" id="mala_c" name="mala_c" value=""><br>
+        <input type="number" id="mala_c" name="mala_c" value=""><br>
         <input type="submit" value="SAGLABĀT">
     </form>
+    <div>
+        {% for n in tris %}
+            <p>Mala a={{n[0]}} Mala b={{n[1]}} Mala c={{n[2]}} {{n[3]}} {{n[4]}} {{n[5]}}</p>
+        {% endfor %}
+
+    </div>
 </body>
 </html>
 
