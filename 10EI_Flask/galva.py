@@ -3,6 +3,8 @@ from flask import request
 from flask import render_template
 import random
 import datetime
+import csv
+import os
 
 app = Flask(__name__)
 
@@ -45,10 +47,42 @@ def dati2():
    print(f"Mala a= {a}")
    print(f"Mala b= {b}") 
    print(f"Mala c= {c}")
-   print(trisTips(a, b, c))
+ 
+   a1,b1,c1 = malas_2(a,b,c)
+   print(trisTips(a1, b1, c1))
+   dati_w_csv(a1,b1,c1)
    return render_template("dati.html") 
 
 #----------------------------- Funkcijas
+def dati_w_csv(a,b,c):
+    if irTrissturis(a, b, c):
+        dati = [a,b,c,'1',trisTips(a, b, c),trisATips(a, b, c)]
+    else:
+        dati = [a,b,c,'0','','']
+    with open(os.getcwd()+'\\10EI_Flask\\static\\dati.csv','+a',encoding="UTF8",newline='') as file1:
+        write = csv.writer(file1)     
+        write.writerow(dati)
+
+    return
+
+def dati_r_csv(dati):
+    return
+def malas_2(a,b,c):
+    if isinstance(a, (int, float, str)):
+        aa = float(a)
+    else:
+        aa = 0.
+    if isinstance(b, (int, float, str)):
+        bb = float(b)
+    else:
+        bb = 0.
+    if isinstance(c, (int, float, str)):
+        cc = float(c)
+    else:
+        cc = 0.
+    return aa,bb,cc
+
+
 def irTrissturis(a, b, c):
     if a<(b+c) and b<(c+a) and c<(a+b):
         return True
